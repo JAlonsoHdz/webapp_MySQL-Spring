@@ -1,5 +1,6 @@
 package com.alonso.first.application.controller;
 
+
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import org.springframework.web.servlet.ModelAndView;
 
 import com.alonso.first.application.model.Task;
 import com.alonso.first.application.service.TaskService;
@@ -53,18 +54,20 @@ public class MainController {
 
 
 	@GetMapping("/update-tasks")
-	public String updateTasks(@RequestParam int id, HttpServletRequest req) {
-		req.setAttribute("tasks", taskService.findTask(id));
-		System.out.println(taskService.findTask(id).getDescription());
-		req.setAttribute("mode", "MODE_UPDATE");
-		return "index";
+	public ModelAndView updateTasks(@RequestParam int id)  {
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("task", taskService.findTask(id));
+		mv.addObject("mode", "MODE_UPDATE");
+		mv.setViewName("index");
+		return mv;
 	}
 	
 	@GetMapping("/delete-tasks")
 	public String deleteTask(@RequestParam int id, HttpServletRequest req) {
 		taskService.delete(id);
 		req.setAttribute("tasks", taskService.findAll());
-		req.setAttribute("mode", "TASKS");
+		req.setAttribute("mode", "MODE_TASKS");
 		return "index";
 	}
 }
