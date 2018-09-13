@@ -6,7 +6,7 @@
 	<groupId>com.alonso.webapp</groupId>
 	<artifactId>AlonsoFirstTest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>AlonsoFirstTest</name>
 	<description>Demo project for Spring Boot</description>
@@ -76,6 +76,7 @@
 	</dependencies>
 
 	<build>
+	
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -85,16 +86,11 @@
 			
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
-					<version>2.4</version>
-					<configuration>
-						<warSourceDirectory>WebContent</warSourceDirectory>
-						<failOnMissingWebXml>false</failOnMissingWebXml>
-					</configuration>
-			</plugin>
-		</plugins>
-		
-		
+<!-- 					<version>2.4</version> -->
+<!-- 					<configuration> -->
+<!-- 						<warSourceDirectory>webapp</warSourceDirectory>						 -->
+<!-- 					</configuration> -->
+			</plugin>			
+		</plugins>		
 	</build>
-
-
 </project>
