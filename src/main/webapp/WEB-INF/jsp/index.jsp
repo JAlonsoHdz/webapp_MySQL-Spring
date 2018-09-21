@@ -13,12 +13,15 @@
     <meta http-equiv="Cache-Control" content="no-cache"> 
     <meta http-equiv="Expires" content="Sat, 01 Dec 2001 00:00:00 GMT">
     
-    <title>Task Manager Application | Home</title>
+    <title>Alonso portfolio</title>
     
-    <link rel="stylesheet" href="static/css/bootstrap.css" media="screen">
-     <link href="static/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/bootstrap-nbw.css" media="screen">
+    <link rel="stylesheet" href="static/css/style2.css" media="screen">
+    <link rel="stylesheet" href="static/fonts/font-awesome.min.css" media="screen">
+    <script src="https://use.fontawesome.com/cdd22921f6.js"></script>
+    
      
-     <script src="https://use.fontawesome.com/cdd22921f6.js"></script>
+     
     
     <!--[if lt IE 9]>
 		<script src="static/js/html5shiv.min.js"></script>
@@ -27,37 +30,286 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	  <a class="navbar-brand" href="/">Alonso WebApp</a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-	
-	  <div class="collapse navbar-collapse" id="navbarColor02">
-	    <ul class="navbar-nav mr-auto">
-	      <li class="nav-item active">
-	        <a class="nav-link" href="new-task">New Task <span class="sr-only">(current)</span></a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="all-tasks">All Tasks</a>
-	      </li>      
-	    </ul>
-<!-- 	    <form class="form-inline my-2 my-lg-0"> -->
-<!-- 	      <input class="form-control mr-sm-2" type="text" placeholder="Search"> -->
-<!-- 	      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button> -->
-<!-- 	    </form> -->
-	  </div>
-	</nav>
+	  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <div class="container">
+                <a href="/" class="navbar-brand">Alonso portfolio</a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse"> 
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                                <a href="new-task" class="nav-link">New task</a>
+                        </li>
+                        <li class="nav-item">
+                                <a href="all-tasks" class="nav-link">All tasks</a>
+                        </li>
+                        <li class="nav-item">
+                                <a href="#" data-toggle="modal" 
+                                    data-target="#contactModal" class="nav-link">WebApp Feedback </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 	
 	
 	
 	<c:choose>
 		<c:when test="${mode == 'MODE_HOME' }" >
-			<div class="container" id="homeDiv">
-				<div class="jumbotron text-center">
-					<h1>Welcome to Task Manager</h1>
-				</div>
-			</div>
+			 <!-- HOme section-->
+
+            <header id="home-section">
+                <div class="dark-overlay">
+                    <div class="home-inner">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1 class="display-10">This <strong>demo application</strong> build on Spring</h1>
+                                    <div class="d-flex flex-row">
+                                        <div class="p-4 align-self-start">
+                                            <i class="fa fa-check"></i>
+                                        </div>
+                                        <div class="p-4 p-4 align-self-end">
+                                                The demo it was build using Java Spring framework on the backend and uses bootstrap to render the view.
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row">
+                                            <div class="p-4 align-self-start d-none d-lg-block">
+                                                <i class="fa fa-check"></i>
+                                            </div>
+                                            <div class="p-4 p-4 align-self-end d-none d-lg-block">
+                                                 The application is hosted on Elastic beanstalk and uses RDS to host MySQL database which are part of AWS 
+                                            </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row">
+                                            <div class="p-4 align-self-start d-none d-lg-block">
+                                                <i class="fa fa-check"></i>
+                                            </div>
+                                            <div class="p-4 p-4 align-self-end d-none d-lg-block">
+                                                
+                                                The application provides functionality to manage tasks which includes CRUD operations. You can create, read, update and delete tasks. 
+                                            </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Explore HEAD section-->
+
+            <section id="explore-head-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center">
+                            <div class="p-5">
+                                <h1 class="display-4">Explore</h1>
+                                <p class="lead">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                    
+                                </p>
+                                <a href="#" class="btn btn-outline-secondary">Find out more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Explore body section-->
+            <section id="explore-section" class="bg-light text-muted py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="img/explore-section1.jpeg" alt="" class="img-fluid mb-3 rounded-circle">
+                        </div>
+                        <div class="col-md-6">
+                            <h3>Explore & connect</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus nesciunt reprehenderit ad temporibus nobis repellendus consequuntur, error culpa, asperiores, consequatur autem velit commodi eos voluptates. Ipsa laborum impedit quas quam.</p>
+                            <div class="d-flex flex-row">
+                                    <div class="p-4 align-self-start">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="p-4 p-4 align-self-end">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                    </div>
+                            </div>
+
+                            <div class="d-flex flex-row">
+                                    <div class="p-4 align-self-start">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="p-4 p-4 align-self-end">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                    </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Create HEAD section-->
+
+            <section id="create-head-section" class="bg-primary">
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center">
+                            <div class="p-5">
+                                <h1 class="display-4">Create</h1>
+                                <p class="lead">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                    
+                                </p>
+                                <a href="#" class="btn btn-outline-light">Find out more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Create body section-->
+            <section id="create-section" class="py-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Create your passion</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus nesciunt reprehenderit ad temporibus nobis repellendus consequuntur, error culpa, asperiores, consequatur autem velit commodi eos voluptates. Ipsa laborum impedit quas quam.</p>
+                                <div class="d-flex flex-row">
+                                        <div class="p-4 align-self-start">
+                                            <i class="fa fa-check"></i>
+                                        </div>
+                                        <div class="p-4 p-4 align-self-end">
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                        </div>
+                                </div>
+    
+                                <div class="d-flex flex-row">
+                                        <div class="p-4 align-self-start">
+                                            <i class="fa fa-check"></i>
+                                        </div>
+                                        <div class="p-4 p-4 align-self-end">
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                        </div>
+                                </div>    
+                            </div>
+                            <div class="col-md-6">
+                                <img src="img/create-section1.jpeg" alt="" class="img-fluid mb-3 rounded-circle">
+                            </div>
+                            
+                        </div>
+                    </div>
+                </section>
+
+            <!-- Share HEAD section-->
+
+            <section id="share-head-section" class="bg-primary">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col text-center">
+                                <div class="p-5">
+                                    <h1 class="display-4">Share</h1>
+                                    <p class="lead">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                        
+                                    </p>
+                                    <a href="#" class="btn btn-outline-light">Find out more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+    
+                <!-- Share body section-->
+                <section id="share-section" class="bg-light text-muted py-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="img/share-section1.jpeg" alt="" class="img-fluid mb-3 rounded-circle">
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Share & collaborate</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus nesciunt reprehenderit ad temporibus nobis repellendus consequuntur, error culpa, asperiores, consequatur autem velit commodi eos voluptates. Ipsa laborum impedit quas quam.</p>
+                                <div class="d-flex flex-row">
+                                        <div class="p-4 align-self-start">
+                                            <i class="fa fa-check"></i>
+                                        </div>
+                                        <div class="p-4 p-4 align-self-end">
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                        </div>
+                                </div>
+    
+                                <div class="d-flex flex-row">
+                                        <div class="p-4 align-self-start">
+                                            <i class="fa fa-check"></i>
+                                        </div>
+                                        <div class="p-4 p-4 align-self-end">
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                        </div>
+                                </div>    
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Main footer-->
+
+                <footer id="main-footer" class="bg-dark">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col text-center">
+                                <div class="py-4">
+                                    <h1 class="h3">My theme</h1>
+                                    <p>Copyright by Alonso Hernandez</p>
+                                    <button class="btn ntn-primary" data-toggle="modal" 
+                                    data-target="#contactModal">Contact US</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+                <!-- Contact Modal-->
+
+                <div class="modal fade text-dark" id="contactModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-tittle" id="contactModalTittle">
+                                    Contact US
+                                </h5>
+                            </div>   
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message">Message</label>
+                                        <textarea class="form-control"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary btn-block">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
 		</c:when>
 	</c:choose>
 	
@@ -70,7 +322,7 @@
 				
 					<table class="table table-striped table-bordered table-hover"">
 						<thead>
-							<tr class="table-dark">
+							<tr>
 								<th>Id</th>
 								<th>Name</th>
 								<th>Description</th>
@@ -84,7 +336,7 @@
 						
 						<tbody>
 							<c:forEach items="${tasks}" var="task" >
-								<tr>
+								<tr class="table-secondary" style="color:#000">
 									<td>${task.id}</td>
 									<td>${task.name}</td>
 									<td>${task.description}</td>
