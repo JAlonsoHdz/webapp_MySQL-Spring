@@ -48,7 +48,7 @@
                                 <a href="all-tasks" class="nav-link">All tasks</a>
                         </li>
                         <li class="nav-item">
-                                <a href="#" data-toggle="modal" 
+                                <a href="" data-toggle="modal" 
                                     data-target="#contactModal" class="nav-link">WebApp Feedback </a>
                         </li>
                     </ul>
@@ -284,28 +284,34 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-tittle" id="contactModalTittle">
-                                    Contact US
+                                    Contact me
                                 </h5>
                             </div>   
                             <div class="modal-body">
-                                <form>
-                                    <div class="form-group">
-                                        <label for="name">Name</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="message">Message</label>
-                                        <textarea class="form-control"></textarea>
-                                    </div>
-                                </form>
+                            
+                            	<form class="form-horizontal" method="POST" action="save-feedback">
+																														
+		                                    <div class="form-group">
+		                                        <label>Name</label>
+		                                        <input type="text" class="form-control" name="name" />
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label>Email</label>
+		                                        <input type="text" class="form-control" name="email" />
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label>Message</label>
+		                                        <textarea class="form-control" name="message"></textarea>
+		                                    </div>
+		                                																				
+										<div class="modal-footer">
+			<!--                                 <button class="btn btn-primary btn-block" value="Save">Submit</button> -->
+			                                <input type="submit" class="btn btn-primary btn-block" value="Submit"/>
+			                            </div>	
+													
+									</form>                                                                            
                             </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-primary btn-block">Submit</button>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

@@ -11,10 +11,14 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.alonso.first.application.model.FeedbackForm;
 import com.alonso.first.application.model.Task;
+import com.alonso.first.application.service.FeedbackService;
 import com.alonso.first.application.service.TaskService;
 
 @Controller
@@ -23,11 +27,22 @@ public class MainController {
 	@Autowired
 	private TaskService taskService;
 	
+	@Autowired
+	private FeedbackService feedbackService;
+	
 	@GetMapping("/")
 	public String home(HttpServletRequest req) {
 		req.setAttribute("mode", "MODE_HOME");																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				
 		return "index";
 	}
+	
+	
+//	@RequestMapping(method= RequestMethod.GET, value={"/","/login"})
+//	@GetMapping("/")
+//	public String login(HttpServletRequest req) {
+//		req.setAttribute("mode", "MODE_LOGIN");																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				
+//		return "login";
+//	}
 	
 	@GetMapping("/all-tasks")
 	public String allTasks(HttpServletRequest req) {
@@ -49,6 +64,14 @@ public class MainController {
 		taskService.save(task);
 		req.setAttribute("tasks", taskService.findAll());
 		req.setAttribute("mode", "MODE_TASKS");
+		return "index";
+	}
+	
+	@PostMapping("/save-feedback")
+	public String saveFeedback(@ModelAttribute FeedbackForm ff, BindingResult bindingResult,  HttpServletRequest req) {
+		feedbackService.save(ff);
+		req.setAttribute("feedback", feedbackService.findAll());
+		req.setAttribute("mode", "MODE_HOME");
 		return "index";
 	}
 
