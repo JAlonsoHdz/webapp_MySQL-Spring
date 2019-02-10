@@ -6,7 +6,7 @@
 	<groupId>com.alonso.webapp</groupId>
 	<artifactId>AlonsoFirstTest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+<!-- 	<packaging>war</packaging> -->
 
 	<name>AlonsoFirstTest</name>
 	<description>Demo project for Spring Boot</description>
@@ -93,13 +93,9 @@
 				
 			</plugin>
 			
-			<plugin>
-				<artifactId>maven-war-plugin</artifactId>
-<!-- 					<version>2.4</version> -->
-<!-- 					<configuration> -->
-<!-- 						<warSourceDirectory>webapp</warSourceDirectory>						 -->
-<!-- 					</configuration> -->
-			</plugin>			
+<!-- 			<plugin> -->
+<!-- 				<artifactId>maven-war-plugin</artifactId> -->
+<!-- 			</plugin>			 -->
 		</plugins>		
 	</build>
 </project>
